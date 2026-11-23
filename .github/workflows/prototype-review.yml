@@ -1,0 +1,29 @@
+name: Inspect the Quiet Place prototype
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [index.html, 'css/**', 'js/**', 'qa/browser.cjs', '.github/workflows/prototype-review.yml']
+permissions:
+  contents: read
+jobs:
+  browser:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install the browser test driver
+        run: npm install --prefix "$RUNNER_TEMP/quiet-place-qa" playwright-core@1.56.1
+      - name: Inspect the local development server in Chrome
+        env:
+          BASE_URL: http://127.0.0.1:8000/
+        run: |
+          python3 -m http.server 8000 --bind 127.0.0.1 > "$RUNNER_TEMP/quiet-place-http.log" 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid"' EXIT
+          curl --fail --retry 5 --retry-connrefused --retry-delay 1 "$BASE_URL" > /dev/null
+          NODE_PATH="$RUNNER_TEMP/quiet-place-qa/node_modules" node qa/browser.cjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: quiet-place-browser-evidence
+          path: docs/screenshots/

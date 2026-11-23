@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#203e35">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="css/styles.css">
+  <title>Quiet Place</title>
+</head>
+<body>
+  <a class="skip" href="#spot-form">Skip to the form</a>
+  <header class="masthead">
+    <div class="wrap hero">
+      <div><h1>Quiet Place</h1><p>Keep a field guide to the places where you study, read and recharge.</p></div>
+      <div class="landscape" aria-hidden="true"><i></i><i></i><i></i></div>
+    </div>
+  </header>
+  <main class="wrap">
+    <p class="prototype-note"><span id="mode-label">Session prototype · Changes reset on refresh.</span> <a id="example-link" href="?view=examples">Explore example spots</a></p>
+    <section class="entry" aria-labelledby="add-heading">
+      <h2 id="add-heading">Add a spot</h2>
+      <form id="spot-form" novalidate>
+        <div class="fields">
+          <div class="name-field"><label for="name">Place name</label><input id="name" name="name" required maxlength="50" placeholder="e.g. Library window seat" aria-describedby="form-message"></div>
+          <div><label for="type">Type</label><select id="type" name="type" required aria-describedby="form-message"><option value="">Choose a type</option><option>Library</option><option>Café</option><option>Outdoors</option><option>Other</option></select></div>
+          <div><label for="noise">Noise level</label><select id="noise" name="noise" required aria-describedby="form-message"><option value="">Choose a level</option><option>Silent</option><option>Quiet</option><option>Moderate</option></select></div>
+          <div class="note-field"><label for="note">Note <span>(optional · 100 characters)</span></label><textarea id="note" name="note" maxlength="100" rows="2" placeholder="What makes this spot worth remembering?"></textarea></div>
+        </div>
+        <button class="primary" type="submit">Add Spot</button>
+        <p id="form-message" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+    <section class="collection" aria-labelledby="list-heading">
+      <div class="list-head"><div><h2 id="list-heading" tabindex="-1">Your spots</h2><p id="summary" role="status">Showing 0 spots</p></div>
+        <div class="filter-field"><label for="filter">Filter by noise level</label><select id="filter"><option>All</option><option>Silent</option><option>Quiet</option><option>Moderate</option></select></div>
+      </div>
+      <ul id="spots" class="cards" aria-label="Quiet spots"></ul>
+      <div id="empty" class="empty"><div class="book" aria-hidden="true"></div><p>No spots yet. Add your first quiet place above.</p></div>
+      <p id="list-message" role="status" aria-live="polite"></p>
+      <button class="clear" id="clear" type="button" disabled>Clear All Spots</button>
+    </section>
+  </main>
+  <template id="spot-card">
+    <li class="card"><article>
+      <div class="card-meta"><span class="type"></span><span class="badge"></span></div>
+      <h3></h3><p class="note"></p><p class="star" hidden><span aria-hidden="true">★</span> Favourite</p>
+      <div class="actions"><button type="button" data-action="favourite" aria-pressed="false">Favourite</button><button type="button" data-action="remove">Remove</button></div>
+      <p class="card-message" role="status"></p>
+    </article></li>
+  </template>
+  <dialog id="confirmation" aria-labelledby="dialog-title" aria-describedby="dialog-message">
+    <h2 id="dialog-title">Confirm removal</h2><p id="dialog-message"></p>
+    <form method="dialog"><button type="submit" value="cancel" autofocus>Cancel</button><button id="confirm-action" class="danger" type="submit" value="confirm">Remove</button></form>
+  </dialog>
+  <script src="js/app.js"></script>
+</body>
+</html>
