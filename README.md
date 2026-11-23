@@ -20,3 +20,7 @@ Open the [interface source](index.html), [stylesheet](css/styles.css), [JavaScri
 From the repository root, run `python3 -m http.server 8000` and open http://127.0.0.1:8000/. Use **Explore example spots** to inspect the three-card layout. Both views let you add, filter, favourite, remove and clear for the current visit. Refresh resets the prototype. Final-project work includes Local Storage, persistent IDs, storage failure handling and cross-refresh testing.
 
 The app uses HTML, CSS and vanilla JavaScript. It has no production build step, external fonts, image requests or API dependencies. Sample places are adapted from the assigned brief.
+
+**Published on GitHub Pages:** [Open Quiet Place](https://jacksonissacs.github.io/mtm6302-final-boho0005/) or [inspect the clearly labelled example collection](https://jacksonissacs.github.io/mtm6302-final-boho0005/?view=examples).
+
+[Browser screenshots and published-site checks](docs/milestone-3-verification.md) · [Milestones 2 and 3 checklist audit](docs/milestone-audit.md).

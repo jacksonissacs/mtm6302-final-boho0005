@@ -1,0 +1,55 @@
+{
+  "testedAt": "2026-11-23T20:29:39.027Z",
+  "base": "http://127.0.0.1:8000/",
+  "build": "be6705df582b7406d80aad50ab2204283a350b20",
+  "chrome": "157.0.8103.78",
+  "passed": [
+    "Clean first visit, blank selections, empty message and disabled Clear All Spots.",
+    "Keyboard tab order, focus indicator, invalid-name and invalid-selection messages, retained values.",
+    "Trimmed valid add, optional note, form reset, duplicate IDs and all noise filters.",
+    "Favourite on/off by ID, stable ordering, star, label, status and restored focus.",
+    "Named removal prompt, Escape cancellation, focus return and deletion of one duplicate only.",
+    "Clear cancellation retains the filter and collection; confirmed clear resets All and disables the button.",
+    "Accepted boundary inputs; refreshing the session-only prototype returns to empty.",
+    "Example collection at 320, 375, 768 and 1440 px, labels, touch targets, card wrapping and loaded assets; no browser errors."
+  ],
+  "metrics": [
+    {
+      "width": 320,
+      "scrollWidth": 320,
+      "columns": 1,
+      "missingLabels": 0,
+      "minControlHeight": 44,
+      "cardOverflow": false,
+      "cssLoaded": true
+    },
+    {
+      "width": 375,
+      "scrollWidth": 375,
+      "columns": 1,
+      "missingLabels": 0,
+      "minControlHeight": 44,
+      "cardOverflow": false,
+      "cssLoaded": true
+    },
+    {
+      "width": 768,
+      "scrollWidth": 768,
+      "columns": 2,
+      "missingLabels": 0,
+      "minControlHeight": 44,
+      "cardOverflow": false,
+      "cssLoaded": true
+    },
+    {
+      "width": 1440,
+      "scrollWidth": 1440,
+      "columns": 3,
+      "missingLabels": 0,
+      "minControlHeight": 44,
+      "cardOverflow": false,
+      "cssLoaded": true
+    }
+  ],
+  "errors": []
+}

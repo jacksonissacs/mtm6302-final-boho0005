@@ -16,6 +16,7 @@ jobs:
       - name: Inspect the local development server in Chrome
         env:
           BASE_URL: http://127.0.0.1:8000/
+          EVIDENCE_DIR: ${{ runner.temp }}/quiet-place-browser-evidence
         run: |
           python3 -m http.server 8000 --bind 127.0.0.1 > "$RUNNER_TEMP/quiet-place-http.log" 2>&1 &
           server_pid=$!
@@ -26,4 +27,4 @@ jobs:
         if: always()
         with:
           name: quiet-place-browser-evidence
-          path: docs/screenshots/
+          path: ${{ runner.temp }}/quiet-place-browser-evidence/

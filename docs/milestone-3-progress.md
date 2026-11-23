@@ -27,3 +27,7 @@ Labels remain visible, noise badges include words and favourites combine a star 
 5. Execute the final acceptance plan, repeat it on Pages, obtain client feedback and complete the course reflection.
 
 The precise steps appear in [the linked script](../js/app.js). The [verification record](milestone-3-verification.md) distinguishes checks actually run from final acceptance testing. The [communication log](milestone-2/communication-log.md) records the open questions. Outreach awaits owner approval.
+
+## Inspection outcome
+
+Chrome passed eight groups of browser assertions against the hosted runner’s local development server, including all five required interactions during a visit. The public site also passed first-visit, form, filter, favourite, confirmation and responsive checks at four widths. Full results, limitations and 18 screenshots are in the verification record.

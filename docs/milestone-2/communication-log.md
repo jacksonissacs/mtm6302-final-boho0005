@@ -13,3 +13,7 @@ Reviewed November 23, 2026. No verified contact timestamp or client approval is 
 ## Separate client participation
 
 Alan’s November 17 StudyTrack brief records the expected handling of optional dates and completion status. No Milestone 2 partner exchange or wireframe feedback has been verified. Add the dated contribution when available.
+
+## Prototype review · November 23, 2026
+
+The empty entry page and a separate example collection are ready for client review. A draft invitation asks the client to try adding a spot under an active filter and toggling a favourite. No send, reply, client sign-off or elapsed outreach window is recorded. The introduction and invitation are in the owner’s private review report.
